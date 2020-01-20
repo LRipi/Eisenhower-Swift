@@ -21,7 +21,7 @@ struct ContentView: View {
             }
             
             Button(action: {
-                self.Requester.getUser(email: "leo.riberon-piatyszke@epitech.eu", password: "Vtqlf&wD");
+                self.Requester.getUser(email: "leo77500@gmail.com", password: "leogossboo2");
                 print("Hello  World tapped");
             }) {
                 Text("Hello  World")

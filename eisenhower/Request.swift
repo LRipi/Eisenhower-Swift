@@ -11,21 +11,23 @@ import Foundation
 class Request {
     private let endpoint = "http://vps.lemartret.com:3000";
     
-    func getUser(email: String, password: String) -> Void {
-        // body parameters initialization
-        let bodyParameters: Dictionary = [
-            "login": email,
-            "passord": password
-        ];
-        let jsonData = try? JSONSerialization.data(withJSONObject: bodyParameters, options: []);
-        
-        // URL Request initialization
-        let session = URLSession.shared;
-        guard let urlEndpoint = URL(string: self.endpoint + "/users/login") else { return }
-        var urlRequest: URLRequest = URLRequest(url: urlEndpoint);
-        urlRequest.httpMethod = "POST";
-        urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type");
-        let task = session.uploadTask(with: urlRequest, from: jsonData) { data, response, error in
+    private func createUrlEndpoint(route: String) -> URL {
+        return URL(string: self.endpoint + route)!;
+    }
+    
+    private func createRequest(endpoint: URL, method: String, body: Data) -> URLRequest {
+        var urlRequest: URLRequest = URLRequest(url: endpoint);
+        urlRequest.httpMethod = method;
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type");
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Accept");
+        if (method == "POST") {
+            urlRequest.httpBody = body;
+        }
+        return urlRequest;
+    }
+    
+    private func handleRequest(request: URLRequest) -> URLSessionDataTask {
+        return URLSession.shared.dataTask(with: request) { data, response, error in
             if (error != nil) {
                 print(error!);
                 return;
@@ -46,9 +48,26 @@ class Request {
             default:
                 break;
             }
-            let responseString = String(data: data, encoding: .utf8)
-            print(responseString!);
+            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+            if let responseJSON = responseJSON as? [String: Any] {
+                print(responseJSON)
+            }
         }
+    }
+    
+    func getUser(email: String, password: String) -> Void {
+        struct login: Codable {
+            var login: String;
+            var password: String;
+        }
+        // body parameters initialization
+        let bodyData = login(login: email, password: password);
+        guard let jsonData = try? JSONEncoder().encode(bodyData) else { return };
+        
+        // URL Request initialization
+        let urlEndpoint = createUrlEndpoint(route: "/users/login")
+        let urlRequest = createRequest(endpoint: urlEndpoint, method: "POST", body: jsonData);
+        let task = handleRequest(request: urlRequest)
         task.resume();
     }
 }
