@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0FD8E34A22A7274259CE9B5F /* Pods_eisenhower_eisenhowerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0957AB3653F777582928B0EF /* Pods_eisenhower_eisenhowerUITests.framework */; };
+		6D2B77238FBDA9A72D457740 /* Pods_eisenhower.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1CDDCCD55A587E099F22CD5 /* Pods_eisenhower.framework */; };
 		C4EEB72023CF22A10012E338 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EEB71F23CF22A10012E338 /* User.swift */; };
 		C4EEB72223CF7E110012E338 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EEB72123CF7E100012E338 /* Request.swift */; };
 		D39F30B4FA3C2A0D1E2BA528 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39F3F2D45EB5BA36881CD13 /* SceneDelegate.swift */; };
@@ -17,6 +19,7 @@
 		D39F3B201E61890162F99454 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39F3E62CF7AC0085B4E8FEE /* AppDelegate.swift */; };
 		D39F3BA2635F07DA1A02285C /* eisenhowerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39F35C1C2C9658DC6E36839 /* eisenhowerUITests.swift */; };
 		D39F3C746A18A0CBDB79BBD9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D39F3545D92399F29D6891CF /* LaunchScreen.storyboard */; };
+		EF35AE4658589DB0BFC0F04E /* Pods_eisenhowerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80EE6CEB5BF4AF7B8CE5F191 /* Pods_eisenhowerTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +40,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0957AB3653F777582928B0EF /* Pods_eisenhower_eisenhowerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_eisenhower_eisenhowerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2885AEA446F2297F4C3ACF44 /* Pods-eisenhower-eisenhowerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eisenhower-eisenhowerUITests.release.xcconfig"; path = "Target Support Files/Pods-eisenhower-eisenhowerUITests/Pods-eisenhower-eisenhowerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		500139282D768086BF9BC8FB /* Pods-eisenhowerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eisenhowerTests.release.xcconfig"; path = "Target Support Files/Pods-eisenhowerTests/Pods-eisenhowerTests.release.xcconfig"; sourceTree = "<group>"; };
+		7AF76BB90F0A31A254F2AAE7 /* Pods-eisenhower.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eisenhower.debug.xcconfig"; path = "Target Support Files/Pods-eisenhower/Pods-eisenhower.debug.xcconfig"; sourceTree = "<group>"; };
+		80EE6CEB5BF4AF7B8CE5F191 /* Pods_eisenhowerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_eisenhowerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1CDDCCD55A587E099F22CD5 /* Pods_eisenhower.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_eisenhower.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2620CEB88321A68E172CF21 /* Pods-eisenhowerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eisenhowerTests.debug.xcconfig"; path = "Target Support Files/Pods-eisenhowerTests/Pods-eisenhowerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C338B8182FB8030418F71A1E /* Pods-eisenhower.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eisenhower.release.xcconfig"; path = "Target Support Files/Pods-eisenhower/Pods-eisenhower.release.xcconfig"; sourceTree = "<group>"; };
 		C4EEB71F23CF22A10012E338 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C4EEB72123CF7E100012E338 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		D39F31907A1E6C7500AE7417 /* eisenhowerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = eisenhowerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +64,7 @@
 		D39F3E62CF7AC0085B4E8FEE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D39F3F2D45EB5BA36881CD13 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D39F3FADB604BD13F761CE30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FD90E25954852528E03C2EFD /* Pods-eisenhower-eisenhowerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eisenhower-eisenhowerUITests.debug.xcconfig"; path = "Target Support Files/Pods-eisenhower-eisenhowerUITests/Pods-eisenhower-eisenhowerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF35AE4658589DB0BFC0F04E /* Pods_eisenhowerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FD8E34A22A7274259CE9B5F /* Pods_eisenhower_eisenhowerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,12 +88,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D2B77238FBDA9A72D457740 /* Pods_eisenhower.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		48552BE8D2C7535E725936A0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7AF76BB90F0A31A254F2AAE7 /* Pods-eisenhower.debug.xcconfig */,
+				C338B8182FB8030418F71A1E /* Pods-eisenhower.release.xcconfig */,
+				FD90E25954852528E03C2EFD /* Pods-eisenhower-eisenhowerUITests.debug.xcconfig */,
+				2885AEA446F2297F4C3ACF44 /* Pods-eisenhower-eisenhowerUITests.release.xcconfig */,
+				B2620CEB88321A68E172CF21 /* Pods-eisenhowerTests.debug.xcconfig */,
+				500139282D768086BF9BC8FB /* Pods-eisenhowerTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		510BB08FB25C2591B6613472 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B1CDDCCD55A587E099F22CD5 /* Pods_eisenhower.framework */,
+				0957AB3653F777582928B0EF /* Pods_eisenhower_eisenhowerUITests.framework */,
+				80EE6CEB5BF4AF7B8CE5F191 /* Pods_eisenhowerTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D39F32D044FD99407B32A934 /* eisenhower */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +142,8 @@
 				D39F32D044FD99407B32A934 /* eisenhower */,
 				D39F3CBA922DC5051D16CAD3 /* eisenhowerTests */,
 				D39F3FBE0C78A0AF9C846D55 /* eisenhowerUITests */,
+				48552BE8D2C7535E725936A0 /* Pods */,
+				510BB08FB25C2591B6613472 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -149,9 +190,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D39F37C2E522DE862D816414 /* Build configuration list for PBXNativeTarget "eisenhower" */;
 			buildPhases = (
+				F4B492D747F90F76B0F7EA77 /* [CP] Check Pods Manifest.lock */,
 				D39F3FD70E55EECB6E72ED12 /* Sources */,
 				D39F3F1EE4385C1F2A3FC32B /* Frameworks */,
 				D39F31B3963A47BF03F288BA /* Resources */,
+				714EA8D4F21E1B8973F999EA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -166,6 +209,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D39F3BC18D53EFAA9E908FB7 /* Build configuration list for PBXNativeTarget "eisenhowerTests" */;
 			buildPhases = (
+				03DC1A1DFD78C9FC7EB542B4 /* [CP] Check Pods Manifest.lock */,
 				D39F32FEC74F09D9EF83B524 /* Sources */,
 				D39F38BC949EBEFDE1FF66BB /* Frameworks */,
 				D39F3EB5AB6AB6EB836DC7CB /* Resources */,
@@ -184,9 +228,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D39F316E291C790A8130B915 /* Build configuration list for PBXNativeTarget "eisenhowerUITests" */;
 			buildPhases = (
+				B20F6B0286BF6BBA9E77E078 /* [CP] Check Pods Manifest.lock */,
 				D39F35545929F3B9D4E220B0 /* Sources */,
 				D39F3ADC16A47C528384F418 /* Frameworks */,
 				D39F397E9C48AABE9A8B5982 /* Resources */,
+				A09926F7BA1872F7EAA8BBDE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -254,6 +300,115 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		03DC1A1DFD78C9FC7EB542B4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-eisenhowerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		714EA8D4F21E1B8973F999EA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-eisenhower/Pods-eisenhower-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AwaitKit/AwaitKit.framework",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AwaitKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-eisenhower/Pods-eisenhower-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A09926F7BA1872F7EAA8BBDE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-eisenhower-eisenhowerUITests/Pods-eisenhower-eisenhowerUITests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AwaitKit/AwaitKit.framework",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AwaitKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-eisenhower-eisenhowerUITests/Pods-eisenhower-eisenhowerUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B20F6B0286BF6BBA9E77E078 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-eisenhower-eisenhowerUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F4B492D747F90F76B0F7EA77 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-eisenhower-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D39F32FEC74F09D9EF83B524 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -312,6 +467,7 @@
 /* Begin XCBuildConfiguration section */
 		D39F3273768364D15F64CA54 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2885AEA446F2297F4C3ACF44 /* Pods-eisenhower-eisenhowerUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = eisenhowerUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -325,6 +481,7 @@
 		};
 		D39F35C6E6877832D4783435 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 500139282D768086BF9BC8FB /* Pods-eisenhowerTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/eisenhower.app/eisenhower";
 				INFOPLIST_FILE = eisenhowerTests/Info.plist;
@@ -339,6 +496,7 @@
 		};
 		D39F35F3957B037724B83908 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C338B8182FB8030418F71A1E /* Pods-eisenhower.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_ASSET_PATHS = "\"eisenhower/Preview Content\"";
@@ -409,6 +567,7 @@
 		};
 		D39F37A94A007DC2C6452792 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2620CEB88321A68E172CF21 /* Pods-eisenhowerTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/eisenhower.app/eisenhower";
 				INFOPLIST_FILE = eisenhowerTests/Info.plist;
@@ -484,6 +643,7 @@
 		};
 		D39F3A51ED019B71A7645EB3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD90E25954852528E03C2EFD /* Pods-eisenhower-eisenhowerUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = eisenhowerUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -497,6 +657,7 @@
 		};
 		D39F3C43205ED65385754290 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7AF76BB90F0A31A254F2AAE7 /* Pods-eisenhower.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_ASSET_PATHS = "\"eisenhower/Preview Content\"";

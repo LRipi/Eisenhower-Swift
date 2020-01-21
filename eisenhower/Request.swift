@@ -7,6 +7,17 @@
 //
 
 import Foundation
+import PromiseKit
+import AwaitKit
+
+enum ErrorApi: Error {
+    case MissingParameter;
+    case NotFound;
+    case DuplicateEntry;
+    case AuthenticationFailure;
+    case NoJwt;
+    case Unknown;
+}
 
 class Request {
     private let endpoint = "http://vps.lemartret.com:3000";
@@ -26,48 +37,50 @@ class Request {
         return urlRequest;
     }
     
-    private func handleRequest(request: URLRequest) -> URLSessionDataTask {
-        return URLSession.shared.dataTask(with: request) { data, response, error in
-            if (error != nil) {
-                print(error!);
-                return;
-            }
-            guard let data = data,
-                let httpResponse = response as? HTTPURLResponse,
-                error == nil else {
-                    print(error ?? "Unknown Error.");
+    private func handleRequest(request: URLRequest) -> Promise<[String: Any]> {
+        return Promise<[String: Any]> { seal in
+            let task = URLSession.shared.dataTask(with: request) { data, response, error in
+                if (error != nil) {
+                    print(error!);
                     return;
                 }
-            switch httpResponse.statusCode {
-            case 200:
-                break;
-            case 401:
-                break;
-            case 422:
-                break;
-            default:
-                break;
+                guard let data = data,
+                    let httpResponse = response as? HTTPURLResponse,
+                    error == nil else {
+                        print(error ?? "Unknown Error.");
+                        return;
+                    }
+                switch httpResponse.statusCode {
+                case 200:
+                    let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+                    if let responseJSON = responseJSON as? [String: Any] {
+                        return seal.fulfill(responseJSON)
+                    }
+                    break;
+                case 401:
+                    return seal.reject(ErrorApi.AuthenticationFailure)
+                case 422:
+                    return seal.reject(ErrorApi.MissingParameter)
+                default:
+                    return seal.reject(ErrorApi.Unknown)
+                }
             }
-            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
-            if let responseJSON = responseJSON as? [String: Any] {
-                print(responseJSON)
-            }
+            task.resume()
         }
     }
     
-    func getUser(email: String, password: String) -> Void {
+    func getUser(email: String, password: String) throws -> [String: Any] {
         struct login: Codable {
             var login: String;
             var password: String;
         }
         // body parameters initialization
         let bodyData = login(login: email, password: password);
-        guard let jsonData = try? JSONEncoder().encode(bodyData) else { return };
+        guard let jsonData = try? JSONEncoder().encode(bodyData) else { throw ErrorApi.MissingParameter };
         
         // URL Request initialization
         let urlEndpoint = createUrlEndpoint(route: "/users/login")
         let urlRequest = createRequest(endpoint: urlEndpoint, method: "POST", body: jsonData);
-        let task = handleRequest(request: urlRequest)
-        task.resume();
+        return try await(handleRequest(request: urlRequest))
     }
 }

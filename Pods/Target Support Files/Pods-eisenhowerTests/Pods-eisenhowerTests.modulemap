@@ -1,0 +1,6 @@
+framework module Pods_eisenhowerTests {
+  umbrella header "Pods-eisenhowerTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

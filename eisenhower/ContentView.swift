@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import PromiseKit
 
 struct ContentView: View {
     var Requester: Request = Request()
@@ -21,8 +22,10 @@ struct ContentView: View {
             }
             
             Button(action: {
-                self.Requester.getUser(email: "leo77500@gmail.com", password: "leogossboo2");
-                print("Hello  World tapped");
+                guard let user = try? self.Requester.getUser(email: "leo77500@gmail.com", password: "leogossboo2") else { return };
+                for (key, value) in user {
+                    print(key, value)
+                }
             }) {
                 Text("Hello  World")
                     .fontWeight(.bold)
