@@ -11,34 +11,44 @@ import PromiseKit
 
 struct ContentView: View {
     var Requester: Request = Request()
+    @State var email: String = ""
+    @State var password: String = ""
     var body: some View {
         VStack {
             Form {
-            Section(header: Text("Connection"), content: {
-                    Text("Name")
-                    Spacer()
-                    Text("iPhone 11")
+                Section(header: Text("Connection"), content: {
+                    TextField("Enter your email", text: $email)
+                    TextField("Enter your password", text: $password)
                 })
             }
-            
-            Button(action: {
-                guard let user = try? self.Requester.getUser(email: "leo77500@gmail.com", password: "leogossboo2") else { return };
-                for (key, value) in user {
-                    print(key, value)
+            HStack {
+                Button(action: {
+                    guard let user = try? self.Requester.getUser(email: self.email, password: self.password) else { return };
+                    for (key, value) in user {
+                        print(key, value)
+                    }
+                }) {
+                    Text("Se connecter")
+                        .font(.body)
+                        .padding()
+                        .background(Color.blue)
+                        .cornerRadius(40)
+                        .foregroundColor(.white)
+
                 }
-            }) {
-                Text("Hello  World")
-                    .fontWeight(.bold)
-                    .font(.title)
-                    .padding()
-                    .background(Color.purple)
-                    .cornerRadius(40)
-                    .foregroundColor(.white)
-                    .padding(10)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 40)
-                            .stroke(Color.purple, lineWidth: 5)
-                    )
+                Button(action: {
+                    guard let user = try? self.Requester.getUser(email: "leo77500@gmail.com", password: "leogossboo2") else { return };
+                    for (key, value) in user {
+                        print(key, value)
+                    }
+                }) {
+                    Text("S'inscrire")
+                        .font(.body)
+                        .padding()
+                        .background(Color.blue)
+                        .cornerRadius(40)
+                        .foregroundColor(.white)
+                }
             }
         }
     }
