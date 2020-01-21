@@ -1,0 +1,6 @@
+framework module Pods_eisenhower {
+  umbrella header "Pods-eisenhower-umbrella.h"
+
+  export *
+  module * { export * }
+}

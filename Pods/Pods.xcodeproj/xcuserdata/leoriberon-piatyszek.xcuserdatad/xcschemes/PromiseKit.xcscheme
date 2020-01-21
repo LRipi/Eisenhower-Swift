@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D39F363D320EF430012E9569"
-               BuildableName = "eisenhower.app"
-               BlueprintName = "eisenhower"
-               ReferencedContainer = "container:eisenhower.xcodeproj">
+               BlueprintIdentifier = "7C579CE66A1E7A9AA33CA5F97F9C22C5"
+               BuildableName = "PromiseKit.framework"
+               BlueprintName = "PromiseKit"
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -40,16 +40,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D39F363D320EF430012E9569"
-            BuildableName = "eisenhower.app"
-            BlueprintName = "eisenhower"
-            ReferencedContainer = "container:eisenhower.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
