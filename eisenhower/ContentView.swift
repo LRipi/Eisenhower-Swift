@@ -10,7 +10,7 @@ import SwiftUI
 import PromiseKit
 
 struct ContentView: View {
-    var Requester: Request = Request()
+    var Requester: EisenhowerRequester = EisenhowerRequester()
     @State var email: String = ""
     @State var password: String = ""
     var body: some View {
@@ -23,7 +23,7 @@ struct ContentView: View {
             }
             HStack {
                 Button(action: {
-                    guard let user = try? self.Requester.getUser(email: self.email, password: self.password) else { return };
+                    guard let user = try? self.Requester.login(email: self.email, password: self.password) else { return };
                     for (key, value) in user {
                         print(key, value)
                     }
