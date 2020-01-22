@@ -1,34 +1,35 @@
 //
-//  ContentView.swift
+//  RegisterView.swift
 //  eisenhower
 //
-//  Created by Léo Riberon-Piatyszek on 14/01/2020.
+//  Created by Léo Riberon-Piatyszek on 22/01/2020.
 //  Copyright © 2020 epitech. All rights reserved.
 //
 
 import SwiftUI
-import PromiseKit
 
-struct ContentView: View {
+struct RegisterView: View {
     var Requester: EisenhowerRequester = EisenhowerRequester()
     @State var email: String = ""
+    @State var name: String = ""
     @State var password: String = ""
     var body: some View {
         VStack {
             Form {
-                Section(header: Text("Connection"), content: {
+                Section(header: Text("Register"), content: {
                     TextField("Enter your email", text: $email)
+                    TextField("Entre your username", text: $name)
                     TextField("Enter your password", text: $password)
                 })
             }
             HStack {
                 Button(action: {
-                    guard let user = try? self.Requester.login(email: self.email, password: self.password) else { return };
+                    guard let user = try? self.Requester.register(email: self.email, password: self.password, name: self.name) else { return };
                     for (key, value) in user {
                         print(key, value)
                     }
                 }) {
-                    Text("Se connecter")
+                    Text("Soumettre")
                         .font(.body)
                         .padding()
                         .background(Color.blue)
@@ -37,12 +38,9 @@ struct ContentView: View {
 
                 }
                 Button(action: {
-                    guard let user = try? self.Requester.register(email: "leo77500@gmail.com", password: "leogossboo2", name: "kek") else { return };
-                    for (key, value) in user {
-                        print(key, value)
-                    }
+                    print("WIP Switch Login")
                 }) {
-                    Text("S'inscrire")
+                    Text("Se connecter")
                         .font(.body)
                         .padding()
                         .background(Color.blue)
@@ -54,10 +52,8 @@ struct ContentView: View {
     }
 }
 
-#if DEBUG
-struct ContentView_Previews: PreviewProvider {
+struct RegisterView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        RegisterView()
     }
 }
-#endif

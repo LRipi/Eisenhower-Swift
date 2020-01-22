@@ -22,7 +22,8 @@ class User {
         self.token = token;
         self.userRequester = UserRequester(token: self.token);
         self.tasksRequester = TasksRequester(token: self.token);
-        for (value) in tasksRequester.fetchTasks() {
+        self.tasks = [nil] as! [Tasks]
+        for (value) in try! tasksRequester.fetchTasks(parameters: nil) {
             print(value)
         }
     }

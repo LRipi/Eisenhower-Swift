@@ -46,7 +46,7 @@ class EisenhowerRequester: Requester {
             var login: String;
         }
         // body parameters initialization
-        let bodyData = login(login: email);
+        let bodyData = passwordForgotten(login: email);
         guard let jsonData = try? JSONEncoder().encode(bodyData) else { throw ErrorApi.MissingParameter };
         
         // URL Request initialization

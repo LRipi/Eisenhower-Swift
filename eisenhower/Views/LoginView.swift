@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  LoginView.swift
 //  eisenhower
 //
 //  Created by Léo Riberon-Piatyszek on 14/01/2020.
@@ -9,7 +9,7 @@
 import SwiftUI
 import PromiseKit
 
-struct ContentView: View {
+struct LoginView: View {
     var Requester: EisenhowerRequester = EisenhowerRequester()
     @State var email: String = ""
     @State var password: String = ""
@@ -28,7 +28,7 @@ struct ContentView: View {
                         print(key, value)
                     }
                 }) {
-                    Text("Se connecter")
+                    Text("Soumettre")
                         .font(.body)
                         .padding()
                         .background(Color.blue)
@@ -37,10 +37,7 @@ struct ContentView: View {
 
                 }
                 Button(action: {
-                    guard let user = try? self.Requester.register(email: "leo77500@gmail.com", password: "leogossboo2", name: "kek") else { return };
-                    for (key, value) in user {
-                        print(key, value)
-                    }
+                    print("WIP Switch Register")
                 }) {
                     Text("S'inscrire")
                         .font(.body)
@@ -55,7 +52,7 @@ struct ContentView: View {
 }
 
 #if DEBUG
-struct ContentView_Previews: PreviewProvider {
+struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
