@@ -19,7 +19,7 @@ enum ErrorApi: Error {
 }
 
 class Requester {
-    private let endpoint = "http://vps.lemartret.com:3000";
+    let endpoint = "http://localhost:3000";
     
     public func createUrlEndpoint(route: String) -> URL {
         return URL(string: self.endpoint + route)!;
@@ -36,13 +36,9 @@ class Requester {
         return urlRequest;
     }
     
-    public func handleRequest(request: URLRequest) -> Promise<[String: Any]> {
-        return Promise<[String: Any]> { seal in
+    public func handleRequest(request: URLRequest) -> Promise<Dictionary<String, AnyObject>> {
+        return Promise<Dictionary<String, AnyObject>> { seal in
             let task = URLSession.shared.dataTask(with: request) { data, response, error in
-                if (error != nil) {
-                    print(error!);
-                    return;
-                }
                 guard let data = data,
                     let httpResponse = response as? HTTPURLResponse,
                     error == nil else {
@@ -50,23 +46,29 @@ class Requester {
                         return;
                     }
                 switch httpResponse.statusCode {
-                case 200:
+                case 200 ..< 300:
                     let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
                     if let responseJSON = responseJSON as? [String: Any] {
-                        return seal.fulfill(responseJSON)
+                        return seal.fulfill(responseJSON as [String : AnyObject])
                     }
                     break;
                 case 401:
+                    print("Auth failed")
                     return seal.reject(ErrorApi.AuthenticationFailure)
                 case 403:
+                    print("No JWT")
                     return seal.reject(ErrorApi.NoJwt)
                 case 404:
+                    print("Not Found")
                     return seal.reject(ErrorApi.NotFound)
                 case 409:
+                    print("Duplicate entry")
                     return seal.reject(ErrorApi.DuplicateEntry)
                 case 422:
+                    print("Missing Args")
                     return seal.reject(ErrorApi.MissingParameter)
                 default:
+                    print("WTF")
                     return seal.reject(ErrorApi.Unknown)
                 }
             }

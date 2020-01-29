@@ -10,45 +10,35 @@ import SwiftUI
 import PromiseKit
 
 struct ContentView: View {
-    var Requester: EisenhowerRequester = EisenhowerRequester()
-    @State var email: String = ""
-    @State var password: String = ""
+    @State var title: String = "";
+    @State var description: String = "";
+    @State var important: Double = 1;
+    @State var urgent: Double = 1;
+    @State var deadline: Date = Date();
     var body: some View {
         VStack {
             Form {
-                Section(header: Text("Connection"), content: {
-                    TextField("Enter your email", text: $email)
-                    TextField("Enter your password", text: $password)
+                Section(header: Text("Create a task"), content: {
+                    TextField("Enter the task's title", text: $title)
+                    TextField("Enter a task description", text: $description)
+                    Slider(value: $important, in: 1...10, step: 1)
+                    Slider(value: $urgent, in: 1...10, step: 1)
+                    DatePicker(selection: $deadline, in: ...Date(), displayedComponents: .date) {
+                        Text("Choose your deadline")
+                    }
                 })
             }
             HStack {
                 Button(action: {
-                    guard let user = try? self.Requester.login(email: self.email, password: self.password) else { return };
-                    for (key, value) in user {
-                        print(key, value)
-                    }
-                }) {
-                    Text("Se connecter")
+                    print("KEKW")
+                }, label: {
+                    Text("Submit")
                         .font(.body)
                         .padding()
                         .background(Color.blue)
                         .cornerRadius(40)
                         .foregroundColor(.white)
-
-                }
-                Button(action: {
-                    guard let user = try? self.Requester.register(email: "leo77500@gmail.com", password: "leogossboo2", name: "kek") else { return };
-                    for (key, value) in user {
-                        print(key, value)
-                    }
-                }) {
-                    Text("S'inscrire")
-                        .font(.body)
-                        .padding()
-                        .background(Color.blue)
-                        .cornerRadius(40)
-                        .foregroundColor(.white)
-                }
+                })
             }
         }
     }

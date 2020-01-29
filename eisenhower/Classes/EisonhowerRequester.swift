@@ -9,8 +9,8 @@
 import Foundation
 import AwaitKit
 
-class EisenhowerRequester: Requester {
-    func login(email: String, password: String) throws -> [String: Any] {
+final class EisenhowerRequester: Requester {
+    func login(email: String, password: String) throws -> Dictionary<String, AnyObject> {
         struct login: Codable {
             var login: String;
             var password: String;

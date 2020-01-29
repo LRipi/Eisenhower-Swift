@@ -14,46 +14,48 @@ struct RegisterView: View {
     @State var name: String = ""
     @State var password: String = ""
     var body: some View {
-        VStack {
-            Form {
-                Section(header: Text("Register"), content: {
-                    TextField("Enter your email", text: $email)
-                    TextField("Entre your username", text: $name)
-                    TextField("Enter your password", text: $password)
-                })
-            }
-            HStack {
-                Button(action: {
-                    guard let user = try? self.Requester.register(email: self.email, password: self.password, name: self.name) else { return };
-                    for (key, value) in user {
-                        print(key, value)
-                    }
-                }) {
-                    Text("Soumettre")
-                        .font(.body)
-                        .padding()
-                        .background(Color.blue)
-                        .cornerRadius(40)
-                        .foregroundColor(.white)
-
+        NavigationView {
+            VStack {
+                Form {
+                    Section(header: Text("Register"), content: {
+                        TextField("Enter your email", text: $email)
+                        TextField("Entre your username", text: $name)
+                        TextField("Enter your password", text: $password)
+                    })
                 }
-                Button(action: {
-                    print("WIP Switch Login")
-                }) {
-                    Text("Se connecter")
-                        .font(.body)
-                        .padding()
-                        .background(Color.blue)
-                        .cornerRadius(40)
-                        .foregroundColor(.white)
+                HStack {
+                    Button(action: {
+                        guard let user = try? self.Requester.register(email: self.email, password: self.password, name: self.name) else { return };
+                        for (key, value) in user {
+                            print(key, value)
+                        }
+                    }) {
+                        Text("Soumettre")
+                            .font(.body)
+                            .padding()
+                            .background(Color.blue)
+                            .cornerRadius(40)
+                            .foregroundColor(.white)
+                        
+                    }
+                    NavigationLink(destination: LoginView(user: User(email: "", name: "", token: ""))) {
+                        Text("Se connecter")
+                            .font(.body)
+                            .padding()
+                            .background(Color.blue)
+                            .cornerRadius(40)
+                            .foregroundColor(.white)
+                    }.navigationBarTitle(Text("Inscription"))
                 }
             }
         }
     }
 }
 
+#if DEBUG
 struct RegisterView_Previews: PreviewProvider {
     static var previews: some View {
         RegisterView()
     }
 }
+#endif

@@ -10,7 +10,7 @@ import Foundation
 import AwaitKit
 
 class TasksRequester: Requester {
-    private var token: String;
+    let token: String;
     
     init(token: String) {
         self.token = token;
@@ -21,28 +21,41 @@ class TasksRequester: Requester {
         urlRequest.httpMethod = method;
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type");
         urlRequest.setValue("application/json", forHTTPHeaderField: "Accept");
-        urlRequest.setValue("x-access-token", forHTTPHeaderField: self.token)
+        urlRequest.setValue(self.token, forHTTPHeaderField: "x-access-token")
         if (method == "POST" || method == "PUT" || method == "PATCH") {
             urlRequest.httpBody = body;
         }
         return urlRequest;
     }
     
+    public func fetchTasks() throws -> [String: Any] {
+        // URL Request initialization
+        let urlEndpoint = createUrlEndpoint(route: "/tasks");
+        let urlRequest = createRequest(endpoint: urlEndpoint, method: "GET", body: nil);
+        return try await(handleRequest(request: urlRequest))
+    }
+    
     public func fetchTasks(parameters: [String: Int]?) throws -> [String: Any] {
         // URL Request initialization
-        let urlEndpoint = createUrlEndpoint(route: "/tasks/")
+        var urlEndpoint: URL;
+        let importance = parameters?["importance"]
+        let urgence = parameters?["urgence"]
+        urlEndpoint = createUrlEndpoint(route: "/tasks?urgence=\(urgence!)&importance=\(importance!)")
+        //urlEndpoint = createUrlEndpoint(route: "/tasks");
         let urlRequest = createRequest(endpoint: urlEndpoint, method: "GET", body: nil);
         return try await(handleRequest(request: urlRequest))
     }
     
-    public func fetchTasksNumber(parameters: [String: Int]) throws -> [String: Any] {
+    public func fetchTasksNumber(parameters: [String: String]) throws -> [String: Any] {
         // URL Request initialization
-        let urlEndpoint = createUrlEndpoint(route: "/tasks/total")
+        let importance = parameters["importance"]
+        let urgence = parameters["urgence"]
+        let urlEndpoint = createUrlEndpoint(route: "/tasks/total?urgence=\(urgence!)&importance=\(importance!)")
         let urlRequest = createRequest(endpoint: urlEndpoint, method: "GET", body: nil);
         return try await(handleRequest(request: urlRequest))
     }
     
-    public func fetchRemovedTasks(parameters: [String: Int]?) throws -> [String: Any] {
+    public func fetchRemovedTasks(parameters: [String: Int]) throws -> [String: Any] {
         // URL Request initialization
         let urlEndpoint = createUrlEndpoint(route: "/tasks/history")
         let urlRequest = createRequest(endpoint: urlEndpoint, method: "GET", body: nil);

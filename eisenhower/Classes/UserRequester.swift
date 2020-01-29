@@ -9,8 +9,8 @@
 import Foundation
 import AwaitKit
 
-class UserRequester: Requester {
-    private var token: String;
+final class UserRequester: Requester {
+    let token: String;
     
     init(token: String) {
         self.token = token
@@ -21,7 +21,7 @@ class UserRequester: Requester {
         urlRequest.httpMethod = method;
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type");
         urlRequest.setValue("application/json", forHTTPHeaderField: "Accept");
-        urlRequest.setValue("x-access-token", forHTTPHeaderField: self.token)
+        urlRequest.setValue(self.token, forHTTPHeaderField: "x-access-token")
         if (method == "POST" || method == "PUT" || method == "PATCH") {
             urlRequest.httpBody = body;
         }
