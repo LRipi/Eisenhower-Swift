@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Tasks {
+class Tasks: Identifiable {
     var id: Int;
     var urgence: Int;
     var importance: Int;
