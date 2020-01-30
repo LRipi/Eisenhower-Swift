@@ -33,7 +33,7 @@ class User {
                 let importance: Int = value["importance"] as! Int;
                 let urgence: Int = value["urgence"] as! Int;
                 let deadlineIso = value["deadline"] as! String
-                let deadline = ISO8601DateFormatter().date(from: deadlineIso)
+                let deadline = Date.dateFromISOString(string: deadlineIso)
                 self.tasks.append(Tasks(id: id, urgence: urgence, importance: importance, title: title, description: description, deadline: deadline!))
             }
         }

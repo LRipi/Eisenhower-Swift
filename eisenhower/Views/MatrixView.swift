@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct MatrixView: View {
+extension MatrixView {
     init(user: User) {
         self.user = user;
         var tmp = try? self.user.tasksRequester.fetchTasksNumber(parameters: [
@@ -41,7 +41,9 @@ struct MatrixView: View {
         }
         self.totalTasks = firstBlock + secondBlock + thirdBlock + fourthBlock
     }
-    
+}
+
+struct MatrixView: View {
     var user: User
     var totalTasks: Int = 0;
     var totalTasksHistory: Int = 0
@@ -153,7 +155,7 @@ struct MatrixView: View {
 
 #if DEBUG
 struct MatrixView_Previews: PreviewProvider {
-    static var userTest = User(email: "leo77500@gmail.com", name: "leo", token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0FkbWluIjpmYWxzZSwidXNlcklkIjoxLCJpYXQiOjE1ODAyODg0MzcsImV4cCI6MTU4MDM3NDgzN30.sj3uoEWSPshM6RL9-OaT5yk702n50K6Aj6UMtfFCKnE")
+    static var userTest = User(email: "leo77500@gmail.com", name: "leo", token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0FkbWluIjpmYWxzZSwidXNlcklkIjoxLCJpYXQiOjE1ODAzNzY4MTEsImV4cCI6MTU4MDQ2MzIxMX0.1OaC2kLyBMjisSZ0zdJt514PPy6nuKy7v0dsdeCn5x4")
     static var previews: some View {
         MatrixView(user: userTest)
     }
