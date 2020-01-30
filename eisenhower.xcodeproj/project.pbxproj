@@ -20,6 +20,9 @@
 		C462852523D9D0CC008D9287 /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C462852423D9D0CC008D9287 /* AddTaskView.swift */; };
 		C4EEB72023CF22A10012E338 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EEB71F23CF22A10012E338 /* User.swift */; };
 		C4EEB72223CF7E110012E338 /* EisonhowerRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EEB72123CF7E100012E338 /* EisonhowerRequester.swift */; };
+		C4FE0D0F23E2DCF80085BB78 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FE0D0E23E2DCF80085BB78 /* Date.swift */; };
+		C4FE0D1123E2E0840085BB78 /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FE0D1023E2E0840085BB78 /* TaskView.swift */; };
+		C4FE0D1323E2E0F40085BB78 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FE0D1223E2E0F40085BB78 /* Color.swift */; };
 		D39F30B4FA3C2A0D1E2BA528 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39F3F2D45EB5BA36881CD13 /* SceneDelegate.swift */; };
 		D39F30FA4B459B63837F1883 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D39F31961F7DD31700F2A480 /* Preview Assets.xcassets */; };
 		D39F33C5D694DDCE3A27CB2B /* eisenhowerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39F39FF21C9AA13C04EC5C2 /* eisenhowerTests.swift */; };
@@ -66,6 +69,9 @@
 		C462852423D9D0CC008D9287 /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
 		C4EEB71F23CF22A10012E338 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C4EEB72123CF7E100012E338 /* EisonhowerRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EisonhowerRequester.swift; sourceTree = "<group>"; };
+		C4FE0D0E23E2DCF80085BB78 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		C4FE0D1023E2E0840085BB78 /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
+		C4FE0D1223E2E0F40085BB78 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		D39F31907A1E6C7500AE7417 /* eisenhowerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = eisenhowerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D39F31961F7DD31700F2A480 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D39F325FD38F02FBF656EFD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -141,6 +147,7 @@
 				C462852223D993BA008D9287 /* MatrixView.swift */,
 				C462852423D9D0CC008D9287 /* AddTaskView.swift */,
 				C44812FB23DF01EB00B13B79 /* ListTaskView.swift */,
+				C4FE0D1023E2E0840085BB78 /* TaskView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -159,9 +166,19 @@
 			path = eisenhower/Classes;
 			sourceTree = SOURCE_ROOT;
 		};
+		C4FE0D0D23E2DCD80085BB78 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C4FE0D0E23E2DCF80085BB78 /* Date.swift */,
+				C4FE0D1223E2E0F40085BB78 /* Color.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		D39F32D044FD99407B32A934 /* eisenhower */ = {
 			isa = PBXGroup;
 			children = (
+				C4FE0D0D23E2DCD80085BB78 /* Extensions */,
 				C462852123D87C6C008D9287 /* Classes */,
 				C462851E23D87B4C008D9287 /* Views */,
 				D39F3AF0DE4DB11C16399076 /* Info.plist */,
@@ -471,12 +488,15 @@
 				C462852023D87B8A008D9287 /* RegisterView.swift in Sources */,
 				C4EEB72023CF22A10012E338 /* User.swift in Sources */,
 				C434AAC723D7346F0013C245 /* UserRequester.swift in Sources */,
+				C4FE0D1123E2E0840085BB78 /* TaskView.swift in Sources */,
 				D39F3B201E61890162F99454 /* AppDelegate.swift in Sources */,
+				C4FE0D1323E2E0F40085BB78 /* Color.swift in Sources */,
 				C434AAC523D72B240013C245 /* Requester.swift in Sources */,
 				C44812FC23DF01EB00B13B79 /* ListTaskView.swift in Sources */,
 				C434AAC923D7387D0013C245 /* Tasks.swift in Sources */,
 				C4EEB72223CF7E110012E338 /* EisonhowerRequester.swift in Sources */,
 				D39F30B4FA3C2A0D1E2BA528 /* SceneDelegate.swift in Sources */,
+				C4FE0D0F23E2DCF80085BB78 /* Date.swift in Sources */,
 				C462851D23D87AF2008D9287 /* LoginView.swift in Sources */,
 				C434AACB23D739010013C245 /* TasksRequester.swift in Sources */,
 				C462852323D993BA008D9287 /* MatrixView.swift in Sources */,
