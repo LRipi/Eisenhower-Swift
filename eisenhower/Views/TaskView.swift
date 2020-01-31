@@ -32,15 +32,16 @@ struct TaskView: View {
             }
             HStack {
                 Text("\(task.urgence) / \(task.importance)")
-                    .font(.subheadline)
-            }.position(x: 280, y: 540)
+                    .font(.title)
+            }.position(x: 260, y: 280)
         }
     }
 }
 
-
+#if DEBUG
 struct TaskView_Previews: PreviewProvider {
     static var previews: some View {
         TaskView(task: Tasks(id: 42, urgence: 2, importance: 3, title: "Faire un test", description: "Text à tester car il faut s'assurer que c'est pas de la giga bite.", deadline: Date()))
     }
 }
+#endif

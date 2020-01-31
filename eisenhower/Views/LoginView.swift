@@ -10,18 +10,18 @@ import SwiftUI
 import PromiseKit
 
 struct LoginView: View {
-    func logUser() -> Void {
-        guard let response = try? self.Requester.login(email: self.email, password: self.password) else { return };
+    func logUser() -> User {
+        guard let response = try? self.Requester.login(email: self.email, password: self.password) else { return User(email: "", name: "", token: "")}
         let name = response["user"]?["name"] as! String
         let login = response["user"]?["login"] as! String
         let token = response["user"]?["token"] as! String
-        self.user = User(email: login, name: name, token: token)
+        let user = User(email: login, name: name, token: token)
+        return user
     }
     
     var Requester: EisenhowerRequester = EisenhowerRequester()
     @State var email: String = ""
     @State var password: String = ""
-    @State var user: User;
     var body: some View {
         NavigationView {
             VStack {
@@ -32,15 +32,13 @@ struct LoginView: View {
                     })
                 }
                 HStack {
-                    NavigationLink(destination: MatrixView(user: self.user)) {
+                    NavigationLink(destination: MatrixView(user: self.logUser())) {
                         Text("Soumettre")
                             .font(.body)
                             .padding()
                             .background(Color.blue)
                             .cornerRadius(40)
                             .foregroundColor(.white)
-                    }.onTapGesture {
-                        self.logUser()
                     }.navigationBarTitle(Text("Connection"))
                     NavigationLink(destination: RegisterView()) {
                         Text("S'inscrire")
@@ -59,7 +57,7 @@ struct LoginView: View {
 #if DEBUG
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView(user: User(email: "", name: "", token: ""))
+        LoginView()
     }
 }
 #endif

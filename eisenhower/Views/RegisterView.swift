@@ -38,7 +38,7 @@ struct RegisterView: View {
                             .foregroundColor(.white)
                         
                     }
-                    NavigationLink(destination: LoginView(user: User(email: "", name: "", token: ""))) {
+                    NavigationLink(destination: LoginView()) {
                         Text("Se connecter")
                             .font(.body)
                             .padding()

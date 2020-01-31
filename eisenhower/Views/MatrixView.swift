@@ -64,7 +64,10 @@ struct MatrixView: View {
                 }
                 HStack {
                     ZStack {
-                        NavigationLink(destination: ListTaskView()) {
+                        NavigationLink(destination: ListTaskView(tasks: user.tasks
+                                .filter({ $0.importance <= 5 && $0.urgence > 5 })
+                                .map({return $0}))
+                        ) {
                             RoundedRectangle(cornerRadius: 25, style: .continuous)
                                 .fill(Color.purple)
                                 .frame(width: 200.0, height: 220)
@@ -80,7 +83,10 @@ struct MatrixView: View {
                         }
                     }
                     ZStack {
-                        NavigationLink(destination: ListTaskView()) {
+                        NavigationLink(destination: ListTaskView(tasks: user.tasks
+                                .filter({ $0.importance > 5 && $0.urgence > 5 })
+                                .map({return $0}))
+                        ) {
                             RoundedRectangle(cornerRadius: 25, style: .continuous)
                                 .fill(Color.green)
                                 .frame(width: 200.0, height: 220)
@@ -98,7 +104,10 @@ struct MatrixView: View {
                 }
                 HStack {
                     ZStack {
-                        NavigationLink(destination: ListTaskView()) {
+                        NavigationLink(destination: ListTaskView(tasks: user.tasks
+                                .filter({ $0.importance <= 5 && $0.urgence <= 5 })
+                                .map({return $0}))
+                        ) {
                             RoundedRectangle(cornerRadius: 25, style: .continuous)
                                 .fill(Color.blue)
                                 .frame(width: 200.0, height: 220)
@@ -114,7 +123,10 @@ struct MatrixView: View {
                         }
                     }
                     ZStack {
-                        NavigationLink(destination: ListTaskView()) {
+                        NavigationLink(destination: ListTaskView(tasks: user.tasks
+                                .filter({ $0.importance > 5 && $0.urgence <= 5 })
+                                .map({return $0}))
+                        ) {
                             RoundedRectangle(cornerRadius: 25, style: .continuous)
                                 .fill(Color.pink)
                                 .frame(width: 200.0, height: 220)
@@ -155,7 +167,7 @@ struct MatrixView: View {
 
 #if DEBUG
 struct MatrixView_Previews: PreviewProvider {
-    static var userTest = User(email: "leo77500@gmail.com", name: "leo", token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0FkbWluIjpmYWxzZSwidXNlcklkIjoxLCJpYXQiOjE1ODAzNzY4MTEsImV4cCI6MTU4MDQ2MzIxMX0.1OaC2kLyBMjisSZ0zdJt514PPy6nuKy7v0dsdeCn5x4")
+    static var userTest = User(email: "leo77500@gmail.com", name: "leo", token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0FkbWluIjpmYWxzZSwidXNlcklkIjoxLCJpYXQiOjE1ODA0NzA0NzksImV4cCI6MTU4MDU1Njg3OX0.gSRHnLXaSQcTOoHQg6JKxrWXB5AIZTCN6Whg4_BII7U")
     static var previews: some View {
         MatrixView(user: userTest)
     }
