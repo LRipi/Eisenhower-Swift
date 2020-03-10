@@ -57,80 +57,79 @@ struct MatrixView: View {
                                 .filter({ $0.importance <= 5 && $0.urgence > 5 })
                                 .map({return $0}))
                         ) {
-                            RoundedRectangle(cornerRadius: 25, style: .continuous)
-                                .fill(Color.purple)
-                                .frame(width: 200.0, height: 220)
+                            VStack {
+                                Text("Urgent")
+                                    .font(.title).foregroundColor(Color.black).underline(false)
+                                Text("Not important")
+                                    .font(.title).foregroundColor(Color.black).underline(false)
+                                Divider().foregroundColor(Color.gray)
+                                Text("\(firstBlock)")
+                                    .font(.largeTitle).foregroundColor(Color.black).underline(false)
+                            }
                         }.navigationBarTitle(Text("Matrix dashboard"))
-                        VStack {
-                            Text("Urgent")
-                                .font(.title)
-                            Text("Not important")
-                                .font(.title)
-                            Divider()
-                            Text("\(firstBlock)")
-                                .font(.largeTitle)
-                        }
-                    }
+                    }.background(RoundedRectangle(cornerRadius: 25, style: .continuous)
+                    .fill(Color.purple)
+                    .frame(width: 200.0, height: 220))
                     ZStack {
                         NavigationLink(destination: ListTaskView(tasks: user.tasks
                                 .filter({ $0.importance > 5 && $0.urgence > 5 })
                                 .map({return $0}))
                         ) {
-                            RoundedRectangle(cornerRadius: 25, style: .continuous)
-                                .fill(Color.green)
-                                .frame(width: 200.0, height: 220)
-                        }.navigationBarTitle(Text("Matrix dashboard"))
-                        VStack {
-                            Text("Urgent")
-                                .font(.title)
-                            Text("Important")
-                                .font(.title)
-                            Divider()
-                            Text("\(secondBlock)")
-                                .font(.largeTitle)
+                            VStack {
+                                Text("Urgent")
+                                    .font(.title).foregroundColor(Color.black).underline(false)
+                                Text("Important")
+                                    .font(.title).foregroundColor(Color.black).underline(false)
+                                Divider().foregroundColor(Color.gray)
+                                Text("\(secondBlock)")
+                                    .font(.largeTitle).foregroundColor(Color.black).underline(false)
+                            }
                         }
-                    }
-                }
+                        .navigationBarTitle(Text("Matrix dashboard"))
+                    }.background(RoundedRectangle(cornerRadius: 25, style: .continuous)
+                    .fill(Color.green)
+                    .frame(width: 200.0, height: 220))
+                }.frame(width: 400, height: 225)
                 HStack {
                     ZStack {
                         NavigationLink(destination: ListTaskView(tasks: user.tasks
                                 .filter({ $0.importance <= 5 && $0.urgence <= 5 })
                                 .map({return $0}))
                         ) {
-                            RoundedRectangle(cornerRadius: 25, style: .continuous)
-                                .fill(Color.blue)
-                                .frame(width: 200.0, height: 220)
-                        }.navigationBarTitle(Text("Matrix dashboard"))
-                        VStack {
-                            Text("Not urgent")
-                                .font(.title)
-                            Text("Not important")
-                                .font(.title)
-                            Divider()
-                            Text("\(thirdBlock)")
-                                .font(.largeTitle)
-                        }
-                    }
+                            VStack {
+                                Text("Not urgent")
+                                    .font(.title).foregroundColor(Color.black).underline(false)
+                                Text("Not important")
+                                    .font(.title).foregroundColor(Color.black).underline(false)
+                                Divider().foregroundColor(Color.gray)
+                                Text("\(thirdBlock)")
+                                    .font(.largeTitle).foregroundColor(Color.black).underline(false)
+                            }
+                            }
+                            .navigationBarTitle(Text("Matrix dashboard"))
+                    }.background(RoundedRectangle(cornerRadius: 25, style: .continuous)
+                    .fill(Color.blue)
+                    .frame(width: 200.0, height: 220))
                     ZStack {
                         NavigationLink(destination: ListTaskView(tasks: user.tasks
                                 .filter({ $0.importance > 5 && $0.urgence <= 5 })
                                 .map({return $0}))
                         ) {
-                            RoundedRectangle(cornerRadius: 25, style: .continuous)
-                                .fill(Color.pink)
-                                .frame(width: 200.0, height: 220)
-                        }.navigationBarTitle(Text("Matrix dashboard"))
-                        VStack {
-                            Text("Not urgent")
-                                .font(.title)
-                            Text("Important")
-                                .font(.title)
-                            Divider()
-                            Text("\(fourthBlock)")
-                                .font(.largeTitle)
+                            VStack {
+                                Text("Not urgent")
+                                    .font(.title).foregroundColor(Color.black).underline(false)
+                                Text("Important")
+                                    .font(.title).foregroundColor(Color.black).underline(false)
+                                Divider().foregroundColor(Color.gray)
+                                Text("\(fourthBlock)")
+                                    .font(.largeTitle).foregroundColor(Color.black).underline(false)
+                            }
                         }
-                    }
-                }
+                        .navigationBarTitle(Text("Matrix dashboard"))
+                    }.background(RoundedRectangle(cornerRadius: 25, style: .continuous)
+                    .fill(Color.pink)
+                    .frame(width: 200.0, height: 220))
+                }.frame(width: 400, height: 225)
                 HStack {
                     Text("Number of tasks done: ")
                         .font(.headline)
