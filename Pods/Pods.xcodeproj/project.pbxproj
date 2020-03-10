@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -23,6 +23,7 @@
 		53C501A1192291909286B03FF174F49D /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4AF8C07D4D5E871AFA158C678D53CB /* Configuration.swift */; };
 		5523A7F05B7DE0F074B2EA991814F80E /* PromiseKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D65B8FA89457D46078AC17C4906840BE /* PromiseKit-dummy.m */; };
 		584786968E6C2F0A86232A9D66C054D0 /* AwaitKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 495665FC519D0B2748C496E4FC43D76B /* AwaitKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5932390124179B4300A6CD87 /* NavigationStack in Frameworks */ = {isa = PBXBuildFile; productRef = 5932390024179B4300A6CD87 /* NavigationStack */; };
 		5E873E494D94C64E7E21CE4D504BC0C7 /* Guarantee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146450B91CC76AAEAE7FE27E2456F1D6 /* Guarantee.swift */; };
 		61DB7F8BE9930FBC27766B3317D10CAB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71B7CEF11DC64A99BF3BDAC6EA1F1D4C /* Foundation.framework */; };
 		67F0225AF55467F606EBAF554A1B49D4 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F83916449E2027A5C21CF69519A08 /* Box.swift */; };
@@ -229,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				825BD0ED8F4C377B98816AA9279BDD88 /* Foundation.framework in Frameworks */,
+				5932390124179B4300A6CD87 /* NavigationStack in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -590,6 +592,9 @@
 				AFB65A5BA271E8D04F3CFEC530DCBC8B /* PBXTargetDependency */,
 			);
 			name = "Pods-eisenhower";
+			packageProductDependencies = (
+				5932390024179B4300A6CD87 /* NavigationStack */,
+			);
 			productName = "Pods-eisenhower";
 			productReference = 8494F760C406B6604EF5B1930CAFD55F /* Pods_eisenhower.framework */;
 			productType = "com.apple.product-type.framework";
@@ -669,6 +674,9 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			packageReferences = (
+				593238FF24179B4300A6CD87 /* XCRemoteSwiftPackageReference "swiftui-navigation-stack" */,
+			);
 			productRefGroup = 71C619B28C8CD6E388C3696B6C77EDFD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -861,7 +869,11 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-eisenhowerTests/Pods-eisenhowerTests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-eisenhowerTests/Pods-eisenhowerTests.modulemap";
 				OTHER_LDFLAGS = "";
@@ -895,7 +907,11 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-eisenhower/Pods-eisenhower-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-eisenhower/Pods-eisenhower.modulemap";
 				OTHER_LDFLAGS = "";
@@ -928,7 +944,11 @@
 				INFOPLIST_FILE = "Target Support Files/AwaitKit/AwaitKit-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/AwaitKit/AwaitKit.modulemap";
 				PRODUCT_MODULE_NAME = AwaitKit;
 				PRODUCT_NAME = AwaitKit;
@@ -960,7 +980,11 @@
 				INFOPLIST_FILE = "Target Support Files/PromiseKit/PromiseKit-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/PromiseKit/PromiseKit.modulemap";
 				PRODUCT_MODULE_NAME = PromiseKit;
 				PRODUCT_NAME = PromiseKit;
@@ -992,7 +1016,11 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-eisenhower-eisenhowerUITests/Pods-eisenhower-eisenhowerUITests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-eisenhower-eisenhowerUITests/Pods-eisenhower-eisenhowerUITests.modulemap";
 				OTHER_LDFLAGS = "";
@@ -1026,7 +1054,11 @@
 				INFOPLIST_FILE = "Target Support Files/PromiseKit/PromiseKit-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/PromiseKit/PromiseKit.modulemap";
 				PRODUCT_MODULE_NAME = PromiseKit;
 				PRODUCT_NAME = PromiseKit;
@@ -1123,7 +1155,11 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-eisenhower-eisenhowerUITests/Pods-eisenhower-eisenhowerUITests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-eisenhower-eisenhowerUITests/Pods-eisenhower-eisenhowerUITests.modulemap";
 				OTHER_LDFLAGS = "";
@@ -1156,7 +1192,11 @@
 				INFOPLIST_FILE = "Target Support Files/AwaitKit/AwaitKit-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/AwaitKit/AwaitKit.modulemap";
 				PRODUCT_MODULE_NAME = AwaitKit;
 				PRODUCT_NAME = AwaitKit;
@@ -1188,7 +1228,11 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-eisenhower/Pods-eisenhower-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-eisenhower/Pods-eisenhower.modulemap";
 				OTHER_LDFLAGS = "";
@@ -1223,7 +1267,11 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-eisenhowerTests/Pods-eisenhowerTests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-eisenhowerTests/Pods-eisenhowerTests.modulemap";
 				OTHER_LDFLAGS = "";
@@ -1293,7 +1341,8 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -1357,6 +1406,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		593238FF24179B4300A6CD87 /* XCRemoteSwiftPackageReference "swiftui-navigation-stack" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/biobeats/swiftui-navigation-stack.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5932390024179B4300A6CD87 /* NavigationStack */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 593238FF24179B4300A6CD87 /* XCRemoteSwiftPackageReference "swiftui-navigation-stack" */;
+			productName = NavigationStack;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 }

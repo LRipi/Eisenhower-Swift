@@ -8,6 +8,7 @@
 
 import SwiftUI
 import PromiseKit
+import NavigationStack
 
 struct LoginView: View {
     func logUser() -> User {
@@ -22,17 +23,18 @@ struct LoginView: View {
     var Requester: EisenhowerRequester = EisenhowerRequester()
     @State var email: String = ""
     @State var password: String = ""
+    
     var body: some View {
-        NavigationView {
+        NavigationStackView {
             VStack {
                 Form {
                     Section(header: Text("Connection"), content: {
                         TextField("Enter your email", text: $email)
-                        TextField("Enter your password", text: $password)
+                        SecureField("Enter your password", text: $password)
                     })
                 }
                 HStack {
-                    NavigationLink(destination: MatrixView(user: self.logUser())) {
+                    PushView(destination: MatrixView(user: self.logUser())) {
                         Text("Soumettre")
                             .font(.body)
                             .padding()
@@ -40,7 +42,7 @@ struct LoginView: View {
                             .cornerRadius(40)
                             .foregroundColor(.white)
                     }.navigationBarTitle(Text("Connection"))
-                    NavigationLink(destination: RegisterView()) {
+                    PushView(destination: RegisterView()) {
                         Text("S'inscrire")
                             .font(.body)
                             .padding()
@@ -49,7 +51,7 @@ struct LoginView: View {
                             .foregroundColor(.white)
                     }.navigationBarTitle(Text("Connection"))
                 }
-            }
+            }.navigationBarTitle(Text("Current Name"), displayMode: .inline)
         }
     }
 }

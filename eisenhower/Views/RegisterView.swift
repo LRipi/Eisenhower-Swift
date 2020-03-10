@@ -7,20 +7,22 @@
 //
 
 import SwiftUI
+import NavigationStack
 
 struct RegisterView: View {
     var Requester: EisenhowerRequester = EisenhowerRequester()
     @State var email: String = ""
     @State var name: String = ""
     @State var password: String = ""
+    @EnvironmentObject private var navigationStack: NavigationStack
     var body: some View {
-        NavigationView {
+        NavigationStackView {
             VStack {
                 Form {
                     Section(header: Text("Register"), content: {
                         TextField("Enter your email", text: $email)
                         TextField("Entre your username", text: $name)
-                        TextField("Enter your password", text: $password)
+                        SecureField("Enter your password", text: $password)
                     })
                 }
                 HStack {
@@ -29,6 +31,7 @@ struct RegisterView: View {
                         for (key, value) in user {
                             print(key, value)
                         }
+                        self.navigationStack.pop()
                     }) {
                         Text("Soumettre")
                             .font(.body)
@@ -38,16 +41,19 @@ struct RegisterView: View {
                             .foregroundColor(.white)
                         
                     }
-                    NavigationLink(destination: LoginView()) {
-                        Text("Se connecter")
+                    Button(action: {
+                        self.navigationStack.pop()
+                    }) {
+                        Text("Connection")
                             .font(.body)
                             .padding()
                             .background(Color.blue)
                             .cornerRadius(40)
                             .foregroundColor(.white)
-                    }.navigationBarTitle(Text("Inscription"))
+                        
+                    }
                 }
-            }
+            }.navigationBarTitle(Text("Inscription"))
         }
     }
 }

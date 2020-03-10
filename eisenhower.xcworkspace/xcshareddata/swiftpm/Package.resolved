@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "NavigationStack",
+        "repositoryURL": "https://github.com/biobeats/swiftui-navigation-stack.git",
+        "state": {
+          "branch": "master",
+          "revision": "e8e26892e312e90e905e7125b06d14b05be0532a",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
