@@ -28,7 +28,7 @@ struct LoginView: View {
         NavigationStackView {
             VStack {
                 Form {
-                    Section(header: Text("Connection"), content: {
+                    Section(header: Text("Connection").bold().foregroundColor(Color.black).font(.system(size: 40)), content: {
                         TextField("Enter your email", text: $email)
                         SecureField("Enter your password", text: $password)
                     })
@@ -49,9 +49,9 @@ struct LoginView: View {
                             .background(Color.blue)
                             .cornerRadius(40)
                             .foregroundColor(.white)
-                    }.navigationBarTitle(Text("Connection"))
+                    }
                 }
-            }.navigationBarTitle(Text("Current Name"), displayMode: .inline)
+            }
         }
     }
 }

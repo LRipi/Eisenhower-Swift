@@ -19,7 +19,7 @@ struct RegisterView: View {
         NavigationStackView {
             VStack {
                 Form {
-                    Section(header: Text("Register"), content: {
+                    Section(header: Text("Register").bold().foregroundColor(Color.black).font(.system(size: 40)), content: {
                         TextField("Enter your email", text: $email)
                         TextField("Entre your username", text: $name)
                         SecureField("Enter your password", text: $password)
