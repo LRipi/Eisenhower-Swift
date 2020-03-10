@@ -35,7 +35,7 @@ class TasksRequester: Requester {
         return try await(handleRequest(request: urlRequest))
     }
     
-    public func fetchTasks(parameters: [String: Int]?) throws -> [String: Any] {
+    public func fetchTasks(parameters: [String: String]?) throws -> [String: Any] {
         // URL Request initialization
         var urlEndpoint: URL;
         let importance = parameters?["importance"]
@@ -55,9 +55,18 @@ class TasksRequester: Requester {
         return try await(handleRequest(request: urlRequest))
     }
     
-    public func fetchRemovedTasks(parameters: [String: Int]) throws -> [String: Any] {
+    public func fetchRemovedTasks() throws -> [String: Any] {
         // URL Request initialization
         let urlEndpoint = createUrlEndpoint(route: "/tasks/history")
+        let urlRequest = createRequest(endpoint: urlEndpoint, method: "GET", body: nil);
+        return try await(handleRequest(request: urlRequest))
+    }
+    
+    public func fetchRemovedTasks(parameters: [String: String]?) throws -> [String: Any] {
+        // URL Request initialization
+        let importance = parameters?["importance"]
+        let urgence = parameters?["urgence"]
+        let urlEndpoint = createUrlEndpoint(route: "/tasks/history?urgence=\(urgence!)&importance=\(importance!)")
         let urlRequest = createRequest(endpoint: urlEndpoint, method: "GET", body: nil);
         return try await(handleRequest(request: urlRequest))
     }

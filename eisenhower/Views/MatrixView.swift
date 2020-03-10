@@ -11,35 +11,24 @@ import SwiftUI
 extension MatrixView {
     init(user: User) {
         self.user = user;
-        var tmp = try? self.user.tasksRequester.fetchTasksNumber(parameters: [
-            "importance": "false",
-            "urgence": "true"
-        ])
-        if (tmp != nil) {
-            self.firstBlock = tmp!["number"] as! Int
-        }
-        tmp = try? user.tasksRequester.fetchTasksNumber(parameters: [
-            "importance": "true",
-            "urgence": "true"
-        ])
-        if (tmp != nil) {
-            self.secondBlock = tmp!["number"] as! Int
-        }
-        tmp = try? user.tasksRequester.fetchTasksNumber(parameters: [
-            "importance": "false",
-            "urgence": "false"
-        ])
-        if (tmp != nil) {
-            self.thirdBlock = tmp!["number"] as! Int
-        }
-        tmp = try? user.tasksRequester.fetchTasksNumber(parameters: [
-            "importance": "true",
-            "urgence": "false"
-        ])
-        if (tmp != nil) {
-            self.fourthBlock = tmp!["number"] as! Int
-        }
+        self.firstBlock = self.user.tasks
+            .filter({ $0.importance <= 5 && $0.urgence > 5 })
+            .map({return $0})
+            .count
+        self.secondBlock = self.user.tasks
+            .filter({ $0.importance > 5 && $0.urgence > 5 })
+            .map({return $0})
+            .count
+        self.thirdBlock = self.user.tasks
+            .filter({ $0.importance <= 5 && $0.urgence <= 5 })
+            .map({return $0})
+            .count
+        self.fourthBlock = self.user.tasks
+            .filter({ $0.importance > 5 && $0.urgence <= 5 })
+            .map({return $0})
+            .count
         self.totalTasks = firstBlock + secondBlock + thirdBlock + fourthBlock
+        self.totalTasksHistory = self.user.tasksHistory.count
     }
 }
 
@@ -146,7 +135,7 @@ struct MatrixView: View {
                     Text("Number of tasks done: ")
                         .font(.headline)
                         .bold()
-                    Text("6")
+                    Text("\(totalTasksHistory)")
                         .font(.headline)
                         .bold()
                 }
