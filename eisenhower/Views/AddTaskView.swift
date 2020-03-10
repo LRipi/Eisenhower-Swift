@@ -24,7 +24,7 @@ struct AddTaskView: View {
                         TextField("Enter a task description", text: $description)
                         Slider(value: $important, in: 1...10, step: 1)
                         Slider(value: $urgent, in: 1...10, step: 1)
-                        DatePicker(selection: $deadline, in: ...Date(), displayedComponents: .date) {
+                        DatePicker(selection: $deadline, in: Date()..., displayedComponents: .date) {
                             Text("Choose your deadline")
                         }
                     })
