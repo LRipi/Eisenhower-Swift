@@ -26,23 +26,24 @@ struct LoginView: View {
     
     var body: some View {
         NavigationStackView {
+            NavigationView {
             VStack {
                 Form {
-                    Section(header: Text("Connection").bold().foregroundColor(Color.black).font(.system(size: 40)), content: {
+                    Section(header: Text("Connection").bold().foregroundColor(Color.black).font(    .system(size: 40)), content: {
                         TextField("Enter your email", text: $email)
                             .autocapitalization(.none)
                         SecureField("Enter your password", text: $password)
                     })
                 }
                 HStack {
-                    PushView(destination: MatrixView(user: self.logUser())) {
+                    NavigationLink(destination: MatrixView(user: self.logUser())) {
                         Text("Soumettre")
                             .font(.body)
                             .padding()
                             .background(Color.blue)
                             .cornerRadius(40)
                             .foregroundColor(.white)
-                    }.navigationBarTitle(Text("Connection"))
+                    }.navigationBarTitle(Text("Connection"), displayMode: .inline)
                     PushView(destination: RegisterView()) {
                         Text("S'inscrire")
                             .font(.body)
@@ -53,6 +54,7 @@ struct LoginView: View {
                     }
                 }
             }
+        }
         }
     }
 }

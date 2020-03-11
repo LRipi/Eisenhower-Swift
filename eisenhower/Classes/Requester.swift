@@ -19,7 +19,7 @@ enum ErrorApi: Error {
 }
 
 class Requester {
-    let endpoint = "http://vps.lemartret.com:3000";
+    let endpoint = "http://localhost:3000";
     
     public func createUrlEndpoint(route: String) -> URL {
         return URL(string: self.endpoint + route)!;
