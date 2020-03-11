@@ -10,6 +10,7 @@ import SwiftUI
 
 struct UpdateTaskView: View {
     var user: User;
+    @State var id: Int = 1;
     @State var title: String = "";
     @State var description: String = "";
     @State var important: Double = 1;
@@ -30,7 +31,7 @@ struct UpdateTaskView: View {
             }
             HStack {
                 Button(action: {
-                    print("KEKW")
+                    try! self.user.tasksRequester.updateTask(id: self.id, urgent: Int(self.urgent), important: Int(self.important), title: self.title, description: self.description, deadline: self.deadline)
                 }, label: {
                     Text("Submit")
                         .font(.body)

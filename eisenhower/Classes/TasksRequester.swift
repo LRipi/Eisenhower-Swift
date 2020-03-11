@@ -78,7 +78,7 @@ class TasksRequester: Requester {
         handleRequest(request: urlRequest)
     }
     
-    func updateTask(id: Int, urgent: Int, important: Int, title: String, description: String, deadline: Date) throws -> [String: Any] {
+    func updateTask(id: Int, urgent: Int, important: Int, title: String, description: String, deadline: Date) throws -> Void {
         struct newInformations: Codable {
             var urgent: Int;
             var important: Int;
@@ -93,10 +93,10 @@ class TasksRequester: Requester {
         // URL Request initialization
         let urlEndpoint = createUrlEndpoint(route: "/tasks/" + String(id))
         let urlRequest = createRequest(endpoint: urlEndpoint, method: "PUT", body: jsonData);
-        return try await(handleRequest(request: urlRequest))
+        handleRequest(request: urlRequest);
     }
     
-    func createTask(urgent: Int, important: Int, title: String, description: String, deadline: Date) throws -> [String: Any] {
+    func createTask(urgent: Int, important: Int, title: String, description: String, deadline: Date) throws -> Void {
         struct newInformations: Codable {
             var urgent: Int;
             var important: Int;
@@ -111,6 +111,6 @@ class TasksRequester: Requester {
         // URL Request initialization
         let urlEndpoint = createUrlEndpoint(route: "/tasks/")
         let urlRequest = createRequest(endpoint: urlEndpoint, method: "POST", body: jsonData);
-        return try await(handleRequest(request: urlRequest))
+        handleRequest(request: urlRequest)
     }
 }

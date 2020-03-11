@@ -21,8 +21,8 @@ struct AddTaskView: View {
                 Section(header: Text("Create a task"), content: {
                     TextField("Enter the task's title", text: $title)
                     TextField("Enter a task description", text: $description)
-                    Slider(value: $important, in: 1...10, step: 1)
-                    Slider(value: $urgent, in: 1...10, step: 1)
+                    Slider(value: $important, in: 1...10, step: 1.0)
+                    Slider(value: $urgent, in: 1...10, step: 1.0)
                     DatePicker(selection: $deadline, in: ...Date(), displayedComponents: .date) {
                         Text("Choose your deadline")
                     }
@@ -30,7 +30,7 @@ struct AddTaskView: View {
             }
             HStack {
                 Button(action: {
-                    print("KEKW")
+                    try! self.user.tasksRequester.createTask(urgent: Int(self.urgent), important: Int(self.important), title: self.title, description: self.description, deadline: self.deadline)
                 }, label: {
                     Text("Submit")
                         .font(.body)
