@@ -28,6 +28,7 @@ struct LoginView: View {
                 Form {
                     Section(header: Text("Connection"), content: {
                         TextField("Enter your email", text: $email)
+                            .autocapitalization(.none)
                         TextField("Enter your password", text: $password)
                     })
                 }

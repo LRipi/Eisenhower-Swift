@@ -16,7 +16,7 @@ struct ListTaskView: View {
     var body: some View {
         List {
             ForEach(tasks) { taskItem in
-                NavigationLink(destination: UpdateTaskView(user: self.user)) {
+                NavigationLink(destination: UpdateTaskView(user: self.user, task: taskItem)) {
                     TaskView(task: taskItem)
                 }
             }

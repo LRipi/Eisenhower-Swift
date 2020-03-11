@@ -19,8 +19,11 @@ struct RegisterView: View {
                 Form {
                     Section(header: Text("Register"), content: {
                         TextField("Enter your email", text: $email)
+                            .autocapitalization(.none)
                         TextField("Entre your username", text: $name)
+                            .autocapitalization(.none)
                         TextField("Enter your password", text: $password)
+                            .autocapitalization(.none)
                     })
                 }
                 HStack {
