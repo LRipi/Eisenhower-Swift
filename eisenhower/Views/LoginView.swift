@@ -30,6 +30,7 @@ struct LoginView: View {
                 Form {
                     Section(header: Text("Connection").bold().foregroundColor(Color.black).font(.system(size: 40)), content: {
                         TextField("Enter your email", text: $email)
+                            .autocapitalization(.none)
                         SecureField("Enter your password", text: $password)
                     })
                 }

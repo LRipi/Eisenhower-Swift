@@ -47,9 +47,11 @@ class Requester {
                     }
                 switch httpResponse.statusCode {
                 case 200 ..< 300:
-                    let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
-                    if let responseJSON = responseJSON as? [String: Any] {
-                        return seal.fulfill(responseJSON as [String : AnyObject])
+                    if (httpResponse.statusCode != 204) {
+                        let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+                        if let responseJSON = responseJSON as? [String: Any] {
+                            return seal.fulfill(responseJSON as [String : AnyObject])
+                        }
                     }
                     break;
                 case 401:

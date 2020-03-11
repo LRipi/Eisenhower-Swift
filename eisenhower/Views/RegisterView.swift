@@ -21,7 +21,9 @@ struct RegisterView: View {
                 Form {
                     Section(header: Text("Register").bold().foregroundColor(Color.black).font(.system(size: 40)), content: {
                         TextField("Enter your email", text: $email)
+                            .autocapitalization(.none)
                         TextField("Entre your username", text: $name)
+                            .autocapitalization(.none)
                         SecureField("Enter your password", text: $password)
                     })
                 }
