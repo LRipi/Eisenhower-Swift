@@ -1,14 +1,14 @@
 //
-//  AddTaskView.swift
+//  UpdateTaskView.swift
 //  eisenhower
 //
-//  Created by Léo Riberon-Piatyszek on 23/01/2020.
+//  Created by Léo Riberon-Piatyszek on 11/03/2020.
 //  Copyright © 2020 epitech. All rights reserved.
 //
 
 import SwiftUI
 
-struct AddTaskView: View {
+struct UpdateTaskView: View {
     var user: User;
     @State var title: String = "";
     @State var description: String = "";
@@ -44,10 +44,8 @@ struct AddTaskView: View {
     }
 }
 
-#if DEBUG
-struct AddTaskView_Previews: PreviewProvider {
+struct UpdateTaskView_Previews: PreviewProvider {
     static var previews: some View {
-        AddTaskView(user: User(email: "", name: "", token: ""))
+        UpdateTaskView(user: User(email: "", name: "", token: ""))
     }
 }
-#endif

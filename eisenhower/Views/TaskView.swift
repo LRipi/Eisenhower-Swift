@@ -18,7 +18,8 @@ struct TaskView: View {
             HStack {
                 Text("\(task.id)")
                     .font(.title)
-            }.position(x: 130, y: 280)
+                    .position(x: 120, y: 280)
+            }
             VStack {
                 Text("\(task.title)")
                     .font(.largeTitle)
@@ -33,7 +34,8 @@ struct TaskView: View {
             HStack(alignment: .center) {
                 Text("\(task.urgence) / \(task.importance)")
                     .font(.title)
-            }.position(x: 260, y: 280)
+                    .position(x: 250, y: 280)
+            }
         }
     }
 }

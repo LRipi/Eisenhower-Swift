@@ -9,19 +9,28 @@
 import SwiftUI
 
 struct ListTaskView: View {
-    @State var tasks: [Tasks]
+    @State var tasks: [Tasks];
+    @State var editMode: EditMode = .inactive;
+    @State var selectedTasks = Set<String>();
     var user: User
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(tasks) { taskItem in
+        List {
+            ForEach(tasks) { taskItem in
+                NavigationLink(destination: UpdateTaskView(user: self.user)) {
                     TaskView(task: taskItem)
-                }.onDelete(perform: deleteItem)
-            }.navigationBarTitle("Task list")
+                }
+            }
+            .onDelete(perform: deleteItem)
         }
+        .navigationBarTitle("Task list", displayMode: .inline)
+        .navigationBarItems(trailing:
+            NavigationLink(destination: AddTaskView(user: self.user)) {
+                Image(systemName: "plus")
+            }
+        )
     };
     
-    func deleteItem(at offset: IndexSet) {
+    private func deleteItem(at offset: IndexSet) -> Void{
         user.tasksRequester.deleteTask(id: tasks[offset.first!].id);
         tasks.remove(atOffsets: offset)
     }

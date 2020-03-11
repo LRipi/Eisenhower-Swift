@@ -14,6 +14,7 @@
 		C434AAC923D7387D0013C245 /* Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = C434AAC823D7387D0013C245 /* Tasks.swift */; };
 		C434AACB23D739010013C245 /* TasksRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = C434AACA23D739010013C245 /* TasksRequester.swift */; };
 		C44812FC23DF01EB00B13B79 /* ListTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44812FB23DF01EB00B13B79 /* ListTaskView.swift */; };
+		C4502C002418E7FB008C6DC1 /* UpdateTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4502BFF2418E7FB008C6DC1 /* UpdateTaskView.swift */; };
 		C462851D23D87AF2008D9287 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C462851C23D87AF2008D9287 /* LoginView.swift */; };
 		C462852023D87B8A008D9287 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C462851F23D87B8A008D9287 /* RegisterView.swift */; };
 		C462852323D993BA008D9287 /* MatrixView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C462852223D993BA008D9287 /* MatrixView.swift */; };
@@ -63,6 +64,7 @@
 		C434AAC823D7387D0013C245 /* Tasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tasks.swift; sourceTree = "<group>"; };
 		C434AACA23D739010013C245 /* TasksRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksRequester.swift; sourceTree = "<group>"; };
 		C44812FB23DF01EB00B13B79 /* ListTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTaskView.swift; sourceTree = "<group>"; };
+		C4502BFF2418E7FB008C6DC1 /* UpdateTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTaskView.swift; sourceTree = "<group>"; };
 		C462851C23D87AF2008D9287 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		C462851F23D87B8A008D9287 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		C462852223D993BA008D9287 /* MatrixView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixView.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				C462852423D9D0CC008D9287 /* AddTaskView.swift */,
 				C44812FB23DF01EB00B13B79 /* ListTaskView.swift */,
 				C4FE0D1023E2E0840085BB78 /* TaskView.swift */,
+				C4502BFF2418E7FB008C6DC1 /* UpdateTaskView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -499,6 +502,7 @@
 				C4FE0D0F23E2DCF80085BB78 /* Date.swift in Sources */,
 				C462851D23D87AF2008D9287 /* LoginView.swift in Sources */,
 				C434AACB23D739010013C245 /* TasksRequester.swift in Sources */,
+				C4502C002418E7FB008C6DC1 /* UpdateTaskView.swift in Sources */,
 				C462852323D993BA008D9287 /* MatrixView.swift in Sources */,
 				C462852523D9D0CC008D9287 /* AddTaskView.swift in Sources */,
 			);
