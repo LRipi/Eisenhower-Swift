@@ -71,11 +71,11 @@ class TasksRequester: Requester {
         return try await(handleRequest(request: urlRequest))
     }
     
-    public func deleteTask(id: Int) throws -> [String: Any] {
+    public func deleteTask(id: Int) -> Void {
         // URL Request initialization
         let urlEndpoint = createUrlEndpoint(route: "/tasks/" + String(id))
         let urlRequest = createRequest(endpoint: urlEndpoint, method: "DELETE", body: nil);
-        return try await(handleRequest(request: urlRequest))
+        handleRequest(request: urlRequest)
     }
     
     func updateTask(id: Int, urgent: Int, important: Int, title: String, description: String, deadline: Date) throws -> [String: Any] {

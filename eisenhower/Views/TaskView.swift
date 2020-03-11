@@ -30,7 +30,7 @@ struct TaskView: View {
                     .padding(.horizontal, 110.0)
                 
             }
-            HStack {
+            HStack(alignment: .center) {
                 Text("\(task.urgence) / \(task.importance)")
                     .font(.title)
             }.position(x: 260, y: 280)

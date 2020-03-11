@@ -55,7 +55,7 @@ struct MatrixView: View {
                     ZStack {
                         NavigationLink(destination: ListTaskView(tasks: user.tasks
                                 .filter({ $0.importance <= 5 && $0.urgence > 5 })
-                                .map({return $0}))
+                            .map({return $0}), user: user)
                         ) {
                             RoundedRectangle(cornerRadius: 25, style: .continuous)
                                 .fill(Color.purple)
@@ -74,7 +74,7 @@ struct MatrixView: View {
                     ZStack {
                         NavigationLink(destination: ListTaskView(tasks: user.tasks
                                 .filter({ $0.importance > 5 && $0.urgence > 5 })
-                                .map({return $0}))
+                                .map({return $0}), user: user)
                         ) {
                             RoundedRectangle(cornerRadius: 25, style: .continuous)
                                 .fill(Color.green)
@@ -95,7 +95,7 @@ struct MatrixView: View {
                     ZStack {
                         NavigationLink(destination: ListTaskView(tasks: user.tasks
                                 .filter({ $0.importance <= 5 && $0.urgence <= 5 })
-                                .map({return $0}))
+                                .map({return $0}), user: user)
                         ) {
                             RoundedRectangle(cornerRadius: 25, style: .continuous)
                                 .fill(Color.blue)
@@ -114,7 +114,7 @@ struct MatrixView: View {
                     ZStack {
                         NavigationLink(destination: ListTaskView(tasks: user.tasks
                                 .filter({ $0.importance > 5 && $0.urgence <= 5 })
-                                .map({return $0}))
+                                .map({return $0}), user: user)
                         ) {
                             RoundedRectangle(cornerRadius: 25, style: .continuous)
                                 .fill(Color.pink)
