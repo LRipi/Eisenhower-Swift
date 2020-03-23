@@ -148,6 +148,18 @@ struct MatrixView: View {
                         .foregroundColor(.white)
                 }.padding().navigationBarTitle(Text("Matrix Dashboard"), displayMode: .inline)
             }
+            HStack {
+                Button(action: {
+                    self.user.tasksRequester.deleteAllTasks()
+                }) {
+                    Text("Delete all tasks")
+                        .font(.body)
+                        .padding()
+                        .background(Color.red)
+                        .cornerRadius(40)
+                        .foregroundColor(.white)
+                }.padding()
+            }
         }
     }
 }

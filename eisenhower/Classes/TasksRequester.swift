@@ -96,21 +96,31 @@ class TasksRequester: Requester {
         handleRequest(request: urlRequest);
     }
     
-    func createTask(urgent: Int, important: Int, title: String, description: String, deadline: Date) throws -> Void {
+    func createTask(urgence: Int, importance: Int, title: String, description: String, deadline: Date) throws -> Void {
         struct newInformations: Codable {
-            var urgent: Int;
-            var important: Int;
+            var urgence: Int;
+            var importance: Int;
             var title: String;
             var description: String;
-            var deadline: Date;
+            var deadline: String;
+            var status: String;
         }
+        
+        let formatter = ISO8601DateFormatter()
+        
         // body parameters initialization
-        let bodyData = newInformations(urgent: urgent, important: important, title: title, description: description, deadline: deadline);
+        let bodyData = newInformations(urgence: urgence, importance: importance, title: title, description: description, deadline: formatter.string(from: deadline), status: "open");
         guard let jsonData = try? JSONEncoder().encode(bodyData) else { throw ErrorApi.MissingParameter };
         
         // URL Request initialization
         let urlEndpoint = createUrlEndpoint(route: "/tasks/")
         let urlRequest = createRequest(endpoint: urlEndpoint, method: "POST", body: jsonData);
+        handleRequest(request: urlRequest)
+    }
+    
+    func deleteAllTasks() -> Void {
+        let urlEndpoint = createUrlEndpoint(route: "/tasks/all")
+        let urlRequest = createRequest(endpoint: urlEndpoint, method: "DELETE", body: nil);
         handleRequest(request: urlRequest)
     }
 }
