@@ -29,6 +29,7 @@ struct AddTaskView: View {
                 })
             }
             HStack {
+                NavigationLink(destination: MatrixView(user: self.user)) {
                 Button(action: {
                     try! self.user.tasksRequester.createTask(urgence: Int(self.urgent), importance: Int(self.important), title: self.title, description: self.description, deadline: self.deadline)
                 }, label: {
@@ -39,6 +40,7 @@ struct AddTaskView: View {
                         .cornerRadius(40)
                         .foregroundColor(.white)
                 })
+                }.navigationBarTitle("Navigation")
             }
         }
     }

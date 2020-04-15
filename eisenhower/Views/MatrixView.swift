@@ -33,15 +33,48 @@ extension MatrixView {
 }
 
 struct MatrixView: View {
+    func reload() {
+        self.firstBlock = self.user.tasks
+            .filter({ $0.importance <= 5 && $0.urgence > 5 })
+            .map({return $0})
+            .count
+        self.secondBlock = self.user.tasks
+            .filter({ $0.importance > 5 && $0.urgence > 5 })
+            .map({return $0})
+            .count
+        self.thirdBlock = self.user.tasks
+            .filter({ $0.importance <= 5 && $0.urgence <= 5 })
+            .map({return $0})
+            .count
+        self.fourthBlock = self.user.tasks
+            .filter({ $0.importance > 5 && $0.urgence <= 5 })
+            .map({return $0})
+            .count
+        self.totalTasks = firstBlock + secondBlock + thirdBlock + fourthBlock
+        self.totalTasksHistory = self.user.tasksHistory.count
+    }
+    
     var user: User
-    var totalTasks: Int = 0;
-    var totalTasksHistory: Int = 0
-    var firstBlock: Int = 0;
-    var secondBlock: Int = 0;
-    var thirdBlock: Int = 0;
-    var fourthBlock: Int = 0;
+    @State var totalTasks: Int = 0;
+    @State var totalTasksHistory: Int = 0
+    @State var firstBlock: Int = 0;
+    @State var secondBlock: Int = 0;
+    @State var thirdBlock: Int = 0;
+    @State var fourthBlock: Int = 0;
     var body: some View {
         VStack {
+            HStack {
+                Button(action: {
+                    self.reload()
+                }, label: {
+                    Text("Reload")
+                        .font(.body)
+                        .padding()
+                        .background(Color.blue)
+                        .cornerRadius(40)
+                        .foregroundColor(.white)
+                })
+            }
             HStack {
                 Text("Total active tasks: ")
                     .font(.headline)

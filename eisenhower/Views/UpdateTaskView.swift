@@ -23,6 +23,7 @@ extension UpdateTaskView {
 struct UpdateTaskView: View {
     var user: User;
     var task: Tasks;
+    @Environment (\.presentationMode) var mode: Binding<PresentationMode>;
     @State var title: String = "";
     @State var description: String = "";
     @State var important: Double = 1;
@@ -44,11 +45,23 @@ struct UpdateTaskView: View {
             HStack {
                 Button(action: {
                     try! self.user.tasksRequester.updateTask(id: self.task.id, urgent: Int(self.urgent), important: Int(self.important), title: self.title, description: self.description, deadline: self.deadline)
+                    self.mode.wrappedValue.dismiss()
                 }, label: {
-                    Text("Submit")
+                    Text("Update task")
                         .font(.body)
                         .padding()
                         .background(Color.blue)
+                        .cornerRadius(40)
+                        .foregroundColor(.white)
+                })
+                Button(action: {
+                    self.user.tasksRequester.deleteTask(id: self.task.id)
+                    self.mode.wrappedValue.dismiss()
+                }, label: {
+                    Text("Delete task")
+                        .font(.body)
+                        .padding()
+                        .background(Color.red)
                         .cornerRadius(40)
                         .foregroundColor(.white)
                 })
